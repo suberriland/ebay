@@ -1,0 +1,26 @@
+a.cta {
+    padding: 15px 20px;
+    border: 1px solid $cta;
+    background-color: transparent;
+    text-decoration: none;
+
+    transition: 1s;
+
+    &:after {
+        content: "";
+        background: url('../img/cta/ebay-cta-icon.svg') no-repeat center center;
+        background-size: 11px 10px;
+        size: 21px 10px;
+        padding-left: 10px;
+        margin-left: 10px;
+    }
+
+    &:hover {
+        background-color: $cta;
+        color: $ctaover;
+
+        &:after {
+            background: url('../img/cta/ebay-cta-icon-hover.svg') no-repeat center center;
+        }
+    }
+}

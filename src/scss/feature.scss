@@ -1,0 +1,90 @@
+.feature {
+    margin-top: 10px;
+    @media (min-width: $md) {
+        margin-top: 20px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        
+        justify-content: flex-start;
+
+        .txt {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 40px 20px;
+
+            @media (min-width: $md){
+                flex: 0 0 50%;
+                max-width: 50%;
+                padding: 50px 20px;
+                min-height: 360px;
+            }
+
+            @media (min-width: $xl){
+                flex: 0 0 40%;
+                max-width: 40%;
+                padding: 60px 80px;
+            }
+
+            h2 + p {
+                padding-top: 20px;
+                @media (min-width: $md) {
+                    padding-top: 30px;
+                }
+                @media (min-width: $xl) {
+                    padding-top: 40px;
+                }
+            }
+
+            @media (max-width: $md) {
+                h2 {
+                    font-size: 1.25rem; // 20px
+                    line-height: 1.75rem; // 28px
+                }
+            }
+        }
+
+        .separate {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h2 + p {
+                padding-top: 40px;
+            }
+        }
+
+
+        .img {
+            flex: 0 0 100%;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            @media (min-width: $md) {
+                flex: 0 0 50%;
+                max-width: 50%;
+                min-height: 360px;
+            }
+            @media (min-width: $xl) {
+                flex: 0 0 60%;
+                max-width: 60%;
+            }
+
+            picture {
+                max-height: 100%;
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@mixin absolute {
+    position: absolute;
+}
+
+.box, .feature .container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%
+}
+
+[class*="bg-"] {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: $lg) {
+    
+    [class*="bg-"] {
+        @include absolute;
+        top: 0; left: 0;
+    
+        img {
+            @include absolute;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            z-index: 0;
+        }
+    }
+    
+    .bg-top-left > img {
+        top: 0;
+        left: 0;
+    }
+    .bg-top-center > img {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .bg-top-right > img {
+        top: 0;
+        right: 0;
+    }
+    .bg-center-left > img {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .bg-center > img {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .bg-center-right {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    .bg-bottom-left > img {
+        bottom: 0;
+        left: 0;
+    }
+    .bg-bottom-center > img {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .bg-bottom-right > img {
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.txt {
+    z-index: 1;
+    * {
+        z-index: 1;
+    }
+}
